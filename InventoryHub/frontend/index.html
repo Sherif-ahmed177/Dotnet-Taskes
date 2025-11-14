@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>InventoryHub</title>
+</head>
+<body>
+    <h1>InventoryHub</h1>
+    <pre id="output"></pre>
+
+    <script type="module">
+        import { fetchItems } from "./api.js";
+
+        async function load() {
+            const data = await fetchItems();
+            document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+        }
+        load();
+    </script>
+</body>
+</html>
